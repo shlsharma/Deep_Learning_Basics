@@ -24,7 +24,6 @@ for i=1:epochs
   bias_list = [bias_list;bias(1)];
   for j=1:4
     predicted_output = weights(1)*x1(j)+weights(2)*x2(j)+bias(1);
-    
     error = (y(j)-predicted_output);
     error_avg += abs(error);
     
@@ -63,9 +62,9 @@ xlabel ("X2");
 ylabel ("X1");
 set(gca, "fontsize", 25)
 for i=1:length(bias_list)
-p = plot(x, (-weight_1_list(i)*x-bias_list(i))/weight_2_list(i),'r');
-pause(0.01);
-if i < length(bias_list)
-  delete(p);
-  endif
+  p = plot(x, (-weight_1_list(i)*x-bias_list(i))/weight_2_list(i),'r');
+  pause(0.01);
+    if i < length(bias_list)
+      delete(p);
+    endif
 endfor
